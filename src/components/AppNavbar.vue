@@ -7,6 +7,7 @@ import { ref } from 'vue'
 const toggle = ref('true')
 
 const user = useCurrentUser()
+
 const router = useRouter()
 
 const auth = useFirebaseAuth()
@@ -25,7 +26,8 @@ const handleSignOut = async () => {
 }
 </script>
 <template>
-  <nav class="flex justify-end flex-wrap space-x-1 text-secondary py-4">
+  <div class="text-secondary pt-8" v-if="user">Hello {{ user.email }}</div>
+  <nav class="flex justify-end flex-wrap space-x-1 text-secondary py-2">
     <RouterLink
       class="py-1 px-2 inline-flex items-center"
       :to="{ name: 'HomeView' }"
@@ -84,9 +86,10 @@ const handleSignOut = async () => {
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"
+            d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
           />
         </svg>
+
         <span class="ml-1">sign out</span>
       </button>
     </div>
@@ -107,14 +110,13 @@ const handleSignOut = async () => {
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+            d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"
           />
         </svg>
         <span class="ml-1">sign in</span>
       </RouterLink>
     </div>
   </nav>
-  <div class="text-secondary" v-if="user">Hello {{ user.email }}</div>
 </template>
 
 <style scoped>

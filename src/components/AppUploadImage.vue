@@ -9,7 +9,7 @@ const { file, fileError } = storeToRefs(fileCheckStore)
 
 <template>
   <label
-    class="border-2 border-primary rounded leading-9 font-bold text-primary cursor-pointer hover:bg-primary hover:text-white py-1 px-7 inline-flex items-center"
+    class="border-2 border-primary rounded leading-10 font-bold text-primary cursor-pointer hover:bg-primary hover:text-white flex items-center justify-center w-1/2 md:w-1/6"
   >
     <input
       @change="fileCheckStore.FileCheck"

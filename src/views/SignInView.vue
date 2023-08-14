@@ -25,7 +25,7 @@ const handleSignIn = async () => {
 </script>
 <template>
   <form @submit.prevent="handleSignIn">
-    <div class="test-secondary mt-10">
+    <div class="text-secondary mt-8">
       <p class="text-xl mb-2">Login</p>
       <label for="email">email:</label>
       <input
@@ -35,7 +35,7 @@ const handleSignIn = async () => {
         v-model="email"
         placeholder="e-mail"
       />
-      <label for="password">Passowrd:</label>
+      <label for="password">Password:</label>
       <input
         type="password"
         name="title"
@@ -58,9 +58,10 @@ const handleSignIn = async () => {
         <path
           stroke-linecap="round"
           stroke-linejoin="round"
-          d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+          d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"
         />
       </svg>
+
       <span class="ml-1">sign in</span>
     </button>
   </form>

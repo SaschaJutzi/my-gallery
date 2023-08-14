@@ -3,9 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import SignInView from '../views/SignInView.vue'
 import { useCurrentUser } from 'vuefire'
 
-const requireAuth = (to, from, next) => {
+const requireAuth = async (to, from, next) => {
   const user = useCurrentUser()
-  console.log(user)
   if (!user.value) {
     next({ name: 'SignInView' })
   } else {

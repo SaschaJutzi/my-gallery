@@ -27,7 +27,7 @@ const handleDelete = async () => {
       Title: {{ props.imageSource.title }}
     </p>
     <button
-      class="border-2 border-primary rounded leading-9 font-bold text-primary py-1 px-12 inline-flex items-center cursor-pointer hover:bg-primary hover:text-white"
+      class="border-2 border-primary rounded leading-10 font-bold text-primary flex items-center justify-center w-1/2 md:w-1/6 cursor-pointer hover:bg-primary hover:text-white"
       @click="handleDelete"
     >
       <svg

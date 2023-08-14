@@ -14,7 +14,6 @@ const handleCloseModal = () => {
 }
 </script>
 <template>
-  >
   <Transition
     appear
     enter-from-class="opacity-0"
@@ -46,8 +45,8 @@ const handleCloseModal = () => {
             </svg>
           </div>
           <img :src="props.img.url" />
-          <p class="text-lg">{{ props.img.title }}</p>
-          <p>{{ props.img.description }}</p>
+          <p class="text-lg">{{ props.img ? props.img.title : '' }}</p>
+          <p>{{ props.img ? props.img.description : '' }}</p>
         </div>
       </Transition>
     </div>

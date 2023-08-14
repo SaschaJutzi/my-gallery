@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import { VueFire, VueFireAuth } from 'vuefire'
+import { VueFire, VueFireAuth, useFirebaseAuth } from 'vuefire'
 import { firebaseApp } from '@/firebase'
 import { createPinia } from 'pinia'
 
@@ -8,14 +8,20 @@ import router from './router'
 
 import './assets/tailwind.css'
 
-const app = createApp(App)
+import { onAuthStateChanged } from 'firebase/auth'
 
-app.use(VueFire, {
-  firebaseApp,
-  modules: [VueFireAuth()],
+const auth = useFirebaseAuth()
+
+onAuthStateChanged(auth, () => {
+  const app = createApp(App)
+
+  app.use(VueFire, {
+    firebaseApp,
+    modules: [VueFireAuth()],
+  })
+
+  app.use(createPinia())
+  app.use(router)
+
+  app.mount('#app')
 })
-
-app.use(createPinia())
-app.use(router)
-
-app.mount('#app')

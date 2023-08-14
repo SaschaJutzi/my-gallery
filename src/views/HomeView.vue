@@ -16,10 +16,15 @@ const handleToggleModal = (i) => {
   <main>
     <AppTitle />
     <AppImageGrid @handle-open-modal="handleToggleModal" />
-    <AppModal
-      v-if="selectedImg"
-      :img="selectedImg"
-      @handle-close-modal="handleToggleModal"
-    />
+    <Transition
+      leave-to-class="opacity-0"
+      leave-active-class="transition-opacity duration-500"
+    >
+      <AppModal
+        v-if="selectedImg"
+        :img="selectedImg"
+        @handle-close-modal="handleToggleModal"
+      />
+    </Transition>
   </main>
 </template>
